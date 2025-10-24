@@ -5,9 +5,9 @@
   "keywords": [
     "webpack"
   ],
-  "homepage": "https://github.com/webpack-contrib/coffee-loader",
-  "bugs": "https://github.com/webpack-contrib/coffee-loader/issues",
-  "repository": "webpack-contrib/coffee-loader",
+  "homepage": "https://github.com/webpack/coffee-loader",
+  "bugs": "https://github.com/webpack/coffee-loader/issues",
+  "repository": "webpack/coffee-loader",
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/webpack"
@@ -23,7 +23,7 @@
     "clean": "del-cli dist",
     "prebuild": "npm run clean",
     "build": "cross-env NODE_ENV=production babel src -d dist --copy-files",
-    "commitlint": "commitlint --from=master",
+    "commitlint": "commitlint --from=main",
     "security": "npm audit --production",
     "lint:prettier": "prettier --list-different .",
     "lint:js": "eslint --cache .",

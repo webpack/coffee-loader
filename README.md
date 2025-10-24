@@ -208,10 +208,10 @@ Please take a moment to read our contributing guidelines if you haven't yet done
 [npm-url]: https://npmjs.com/package/coffee-loader
 [node]: https://img.shields.io/node/v/coffee-loader.svg
 [node-url]: https://nodejs.org
-[tests]: https://github.com/webpack-contrib/coffee-loader/workflows/coffee-loader/badge.svg
-[tests-url]: https://github.com/webpack-contrib/coffee-loader/actions
-[cover]: https://codecov.io/gh/webpack-contrib/coffee-loader/branch/master/graph/badge.svg
-[cover-url]: https://codecov.io/gh/webpack-contrib/coffee-loader
+[tests]: https://github.com/webpack/coffee-loader/workflows/coffee-loader/badge.svg
+[tests-url]: https://github.com/webpack/coffee-loader/actions
+[cover]: https://codecov.io/gh/webpack/coffee-loader/branch/main/graph/badge.svg
+[cover-url]: https://codecov.io/gh/webpack/coffee-loader
 [discussion]: https://img.shields.io/github/discussions/webpack/webpack
 [discussion-url]: https://github.com/webpack/webpack/discussions
 [size]: https://packagephobia.now.sh/badge?p=coffee-loader

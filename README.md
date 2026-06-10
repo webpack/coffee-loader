@@ -5,12 +5,12 @@
   </a>
 </div>
 
-[![npm][npm]][npm-url]
-[![node][node]][node-url]
-[![tests][tests]][tests-url]
-[![coverage][cover]][cover-url]
-[![discussion][discussion]][discussion-url]
-[![size][size]][size-url]
+[![npm](https://img.shields.io/npm/v/coffee-loader.svg)](https://npmjs.com/package/coffee-loader)
+[![node](https://img.shields.io/node/v/coffee-loader.svg)](https://nodejs.org)
+[![tests](https://github.com/webpack/coffee-loader/workflows/coffee-loader/badge.svg)](https://github.com/webpack/coffee-loader/actions)
+[![coverage](https://codecov.io/gh/webpack/coffee-loader/branch/main/graph/badge.svg)](https://codecov.io/gh/webpack/coffee-loader)
+[![discussion](https://img.shields.io/github/discussions/webpack/webpack)](https://github.com/webpack/webpack/discussions)
+[![size](https://packagephobia.now.sh/badge?p=coffee-loader)](https://packagephobia.now.sh/result?p=coffee-loader)
 
 # coffee-loader
 
@@ -20,21 +20,27 @@ Compile [CoffeeScript](https://coffeescript.org/) to JavaScript.
 
 To begin, you'll need to install `coffeescript` and `coffee-loader`:
 
-```console displayName="npm"
+```console
 npm install --save-dev coffeescript coffee-loader
 ```
 
-```bash displayName="yarn"
+or
+
+```console
 yarn add -D coffeescript coffee-loader
 ```
 
-```bash displayName="pnpm"
+or
+
+```console
 pnpm add -D coffeescript coffee-loader
 ```
 
 Then add the loader to your `webpack.config.js`. For example:
 
-```coffee displayName="file.coffee"
+**file.coffee**
+
+```coffee
 # Assignment:
 number   = 42
 opposite = true
@@ -65,7 +71,9 @@ alert "I knew it!" if elvis?
 cubes = (math.cube num for num in list)
 ```
 
-```js displayName="webpack.config.js"
+**webpack.config.js**
+
+```js
 module.exports = {
   module: {
     rules: [
@@ -84,20 +92,28 @@ Alternative usage:
 import coffee from "coffee-loader!./file.coffee";
 ```
 
-Finally, run `webpack` using the method you normally use (e.g., via CLI or an
-npm script).
+Finally, run `webpack` using the method you normally use (e.g., via CLI or an npm script).
 
 ## Options
 
+Type: `Object`
+Default: `{ bare: true }`
+
 You can find all available CoffeeScript options [here](https://coffeescript.org/#nodejs-usage).
 
-The `sourceMap` option takes a value from the `compiler.devtool` value by
-default.
+For documentation on the `transpile` option, see [this section](https://coffeescript.org/#transpilation).
 
-The `filename` option takes a value from webpack loader API, but its value
-will be ignored.
+> [!NOTE]
+>
+> The `sourceMap` option takes a value from the `compiler.devtool` value by default.
 
-```js displayName="webpack.config.js"
+> [!NOTE]
+>
+> The `filename` option takes a value from webpack loader API, but it's value will be ignored.
+
+**webpack.config.js**
+
+```js
 module.exports = {
   module: {
     rules: [
@@ -122,22 +138,23 @@ module.exports = {
 
 From CoffeeScript 2 documentation:
 
-CoffeeScript 2 generates JavaScript using the latest, modern syntax. The
-runtime or browsers where you want your code to run might not support all of
-that syntax. In that case, modern JavaScript needs to be converted into an
-older JavaScript that will run in older versions of Node or older browsers;
-for example: `{ a } = obj` into `a = obj.a`. This conversion is done using
-transpilers like Babel, Bublé or Traceur Compiler.
+> [!NOTE]
+>
+> CoffeeScript 2 generates JavaScript using the latest, modern syntax.
+> The runtime or browsers where you want your code to run might not support all of that syntax.
+> In that case, modern JavaScript needs to be converted into an older JavaScript that will run in older versions of Node or older browsers; for example: `{ a } = obj` into `a = obj.a`.
+> This conversion is done using transpilers like Babel, Bublé or Traceur Compiler.
 
-You'll need to install `@babel/core` and `@babel/preset-env` and then create a
-configuration file:
+You'll need to install `@babel/core` and `@babel/preset-env` and then create a configuration file:
 
 ```console
 npm install --save-dev @babel/core @babel/preset-env
 echo '{ "presets": ["@babel/env"] }' > .babelrc
 ```
 
-```js displayName="webpack.config.js"
+**webpack.config.js**
+
+```js
 module.exports = {
   module: {
     rules: [
@@ -157,9 +174,11 @@ module.exports = {
 
 ### Literate CoffeeScript
 
-To use Literate CoffeeScript you should set up:
+To use Literate CoffeeScript you should setup:
 
-```js displayName="webpack.config.js"
+**webpack.config.js**
+
+```js
 module.exports = {
   module: {
     rules: [

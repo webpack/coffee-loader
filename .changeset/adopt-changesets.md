@@ -1,0 +1,3 @@
+---
+"coffee-loader": patch
+---

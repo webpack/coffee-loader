@@ -1,7 +1,15 @@
 {
   "version": "0.2",
   "language": "en,en-gb",
-  "words": ["commitlint", "hspace", "Bublé", "Koppers", "sokra", "memfs"],
+  "words": [
+    "commitlint",
+    "hspace",
+    "Bublé",
+    "Koppers",
+    "sokra",
+    "memfs",
+    "pipefail"
+  ],
   "ignorePaths": [
     "CHANGELOG.md",
     "package.json",

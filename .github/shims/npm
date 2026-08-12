@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ "${1:-}" = "publish" ]; then
+  shift
+  exec npm stage publish "$@"
+fi
+
+exec npm "$@"

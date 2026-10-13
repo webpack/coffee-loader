@@ -196,9 +196,7 @@ module.exports = {
 
 ## Contributing
 
-Please take a moment to read our contributing guidelines if you haven't yet done so.
-
-[CONTRIBUTING](https://github.com/webpack/coffee-loader?tab=contributing-ov-file#contributing)
+Please take a moment to read our [contributing guidelines](https://github.com/webpack/coffee-loader?tab=contributing-ov-file#contributing) if you haven't yet done so.
 
 ## License
 

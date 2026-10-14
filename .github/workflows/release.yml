@@ -32,14 +32,17 @@ jobs:
           cache: npm
           registry-url: "https://registry.npmjs.org"
 
-      # OIDC token exchange needs npm >= 11.5.1, which is newer than the npm
-      # bundled with some Node LTS lines.
+      # `npm stage publish` needs npm >= 11.15.0 (and Node >= 22.14.0), which is
+      # newer than the npm bundled with some Node LTS lines.
       - name: Update npm
         run: npm install -g npm@latest
 
       - run: npm ci
 
-      - name: Create Release Pull Request or Publish to npm
+      # `npm run release` stages the version instead of publishing it. A
+      # maintainer approves it with 2FA (`npm stage approve <stage-id>` or the
+      # Staged Packages tab on the npm website) before it goes live.
+      - name: Create Release Pull Request or Stage to npm
         id: changesets
         uses: changesets/action@a45c4d594aa4e2c509dc14a9f2b3b67ba3780d0d # v1.9.0
         with:
@@ -48,6 +51,7 @@ jobs:
           commit: "chore(release): new release"
           title: "chore(release): new release"
         # No NPM_TOKEN: authentication goes through the npm trusted publisher
-        # configured for this repository and workflow file.
+        # configured for this repository and workflow file. Restrict that
+        # trusted publisher to staging only so a direct publish is rejected.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

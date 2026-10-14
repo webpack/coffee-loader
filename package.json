@@ -7,7 +7,10 @@
   ],
   "homepage": "https://github.com/webpack/coffee-loader",
   "bugs": "https://github.com/webpack/coffee-loader/issues",
-  "repository": "webpack/coffee-loader",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/coffee-loader.git"
+  },
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/webpack"

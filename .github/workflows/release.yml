@@ -7,7 +7,10 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
-permissions: {}
+permissions:
+  id-token: write # Required for OIDC
+  contents: write
+  pull-requests: write
 
 jobs:
   release:
@@ -16,10 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     # Must match the environment set on the npm trusted publisher for this package.
     environment: npm
-    permissions:
-      id-token: write # mint the OIDC token npm exchanges for a short-lived publish token
-      contents: write # version commit, tags and GitHub releases
-      pull-requests: write # open/update the release pull request
     outputs:
       published: ${{ steps.changesets.outputs.published }}
       publishedPackages: ${{ steps.changesets.outputs.publishedPackages }}

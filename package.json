@@ -41,7 +41,7 @@
     "pretest": "npm run lint",
     "test": "npm run test:coverage",
     "prepare": "husky && npm run build",
-    "release": "changeset publish",
+    "release": "node scripts/stage-publish.mjs",
     "changeset": "changeset",
     "version-packages": "changeset version"
   },

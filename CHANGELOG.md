@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.2
+
+### Patch Changes
+
+- cfb7852: chore: test ci workflow
+
 ## 5.0.1
 
 ### Patch Changes

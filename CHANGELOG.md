@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.4
+
+### Patch Changes
+
+- 964b659: ci debugging and pkgjson fix
+
 ## 5.0.3
 
 ### Patch Changes

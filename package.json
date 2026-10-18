@@ -31,10 +31,12 @@
     "lint:prettier": "prettier --list-different .",
     "lint:js": "eslint --cache .",
     "lint:spelling": "cspell --no-must-find-files --cache --quiet \"**/*.*\"",
+    "lint:schema": "schema-utils precompile --check src/options.json",
     "lint": "npm-run-all -l -p \"lint:**\"",
     "fix:js": "npm run lint:js -- --fix",
     "fix:prettier": "npm run lint:prettier -- --write",
-    "fix": "npm-run-all -l fix:js fix:prettier",
+    "fix:schema": "schema-utils precompile src/options.json",
+    "fix": "npm-run-all -l fix:schema fix:js fix:prettier",
     "test:only": "cross-env NODE_ENV=test jest",
     "test:watch": "npm run test:only -- --watch",
     "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
@@ -44,6 +46,12 @@
     "release": "changeset publish",
     "changeset": "changeset",
     "version-packages": "changeset version"
+  },
+  "jest": {
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/src/options\\.check\\.js$"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.24.7",
@@ -76,6 +84,7 @@
     "memfs": "^4.9.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.3.2",
+    "schema-utils": "^4.6.0",
     "webpack": "^5.92.1"
   },
   "peerDependencies": {

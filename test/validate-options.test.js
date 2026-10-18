@@ -20,6 +20,15 @@ function isValid(options) {
 }
 
 describe("validate options", () => {
+  // Options that are not an object never pass the check. `validate` takes an
+  // array as a list of options objects, so it accepts `[]`; the check failing
+  // there only means webpack falls back to the full validation.
+  for (const value of [[], "invalid", 42, null]) {
+    it(`should not pass the check with ${JSON.stringify(value)}`, () => {
+      expect(check(value)).toBe(false);
+    });
+  }
+
   const tests = {
     bare: {
       success: [true, false],

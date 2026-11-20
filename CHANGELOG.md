@@ -1,5 +1,11 @@
 # Changelog
 
+## 5.0.5
+
+### Patch Changes
+
+- f2a96e3: Pass a precompiled options check to `this.getOptions`, so webpack versions that accept it skip compiling the options schema.
+
 ## 5.0.4
 
 ### Patch Changes

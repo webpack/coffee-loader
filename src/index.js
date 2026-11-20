@@ -5,10 +5,11 @@
 import { compile } from "coffeescript";
 
 import CoffeeScriptError from "./CoffeeScriptError";
+import check from "./options.check.js";
 import schema from "./options.json";
 
 export default function loader(source) {
-  const options = this.getOptions(schema);
+  const options = this.getOptions(schema, check);
   const callback = this.async();
   const useSourceMap =
     typeof options.sourceMap === "boolean" ? options.sourceMap : this.sourceMap;
